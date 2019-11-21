@@ -4,8 +4,64 @@
     <title>Brian Fogarty | Capstone</title>
     <meta charset="utf-8">
     <style>
-      @import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);
-      body { font-family: 'Roboto', sans-serif; }
+      @import url(https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap);
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+      h1, h2, h3 {
+        font-weight: normal;
+      }
+      .remark-slide-content .footer {
+        color: #fff;
+        font-size: .5rem;
+        background: #181818;
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+      .remark-slide-content.section-header {
+        background: #000;
+        color: #fff;
+        text-align: center;
+        vertical-align: middle;
+      }
+      .remark-slide-content .footer .citation {
+        float: left;
+        margin-left: 1em;
+        max-width: 90%;
+      }
+      .remark-slide-content .footer .author {
+        float: right;
+        margin-right: 1em;
+        max-width: 10%;
+      }
+      .remark-slide-number {
+        display: none;
+      }
+
+      .caption {
+        font-size: 1rem;
+      }
+      .big {
+        font-size: 1.8rem;
+      }
+      .small {
+        font-size: 1rem;
+      }
+
+      .cols {
+        display: flex;
+      }
+      .col-50 {
+        flex: 50%;
+        padding: 0 0.5em;
+      }
+
+      .width-40 { margin: 0 auto; width: 40% }
+      .width-50 { margin: 0 auto; width: 50% }
+      .width-60 { margin: 0 auto; width: 60% }
     </style>
   </head>
   <body>
@@ -13,8 +69,14 @@
     </script>
     <script>
       var slideshow = remark.create({
+        ratio: '16:9',
         sourceUrl: "talk.md"
       });
+
+      remark.macros.img = function (altText, width) {
+        var url = this;
+        return '<img alt="' + altText + '" src="' + url + '" style="width: ' + width + '" />';
+      };
     </script>
   </body>
 </html>
